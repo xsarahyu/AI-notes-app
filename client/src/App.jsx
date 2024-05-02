@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import './App.css'
 
+const baseURL = 'https://ai-notes-app-server.up.railway.app' || 'https://localhost:5000'
+
 function App() {
   const [notes, setNotes] = useState([])
   const [newNoteContent, setNewNoteContent] = useState('')
@@ -12,7 +14,7 @@ function App() {
 
   const fetchNotes = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/notes')
+      const response = await axios.get(`${baseURL}/api/notes`)
       setNotes(response.data)
     } catch (error) {
       console.error('Error fetching notes:', error)
@@ -27,7 +29,7 @@ function App() {
     event.preventDefault()
 
     try {
-      const response = await axios.post('http://localhost:5000/api/notes', {
+      const response = await axios.post(`${baseURL}/api/notes`, {
         content: newNoteContent
       })
       setNotes([...notes, response.data])
@@ -39,7 +41,7 @@ function App() {
 
   const handleDelete = async (_id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/notes/${_id}`)
+      await axios.delete(`${baseURL}/api/notes/${_id}`)
       setNotes(notes.filter(note => note._id !== _id))
     } catch (error) {
       console.error('Error deleting note:', error)
