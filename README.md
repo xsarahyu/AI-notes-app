@@ -30,17 +30,17 @@ I learned a lot about deploying a React Vite frontend + Node/Express backend (bo
 
 1. Push repo to GitHub.
 
-**Deploy the backend/server first**
+**Deploy the backend/server first**:
 1. In Railway, start a new project and select "Deploy from GitHub repo." Follow the instructions to use the repo in question.
 2. In "Variables," add your environment variables for the server (`MONGO_URI` and `OPENAI_API_KEY` in this case).
 3. In "Settings," specify the Root Directory as `/server`.
 4. Deploy!
-5. Customize the link to your server. In this case, I chose https://ai-notes-server.up.railway.app.
+5. Customize the link to your server. In this case, I chose https://notesgpt-server.up.railway.app.
 
-**Deploy the frontend/client**
+**Deploy the frontend/client**:
 1. In the client-side code, update all API calls to use the link to your server. For example:
     ```
-    const baseURL = 'https://ai-notes-server.up.railway.app' || 'https://localhost:5000'
+    const baseURL = 'https://notesgpt-server.up.railway.app' || 'https://localhost:5000'
     ```
     ```
     const response = await axios.get(`${baseURL}/api/notes`)
@@ -52,6 +52,6 @@ I learned a lot about deploying a React Vite frontend + Node/Express backend (bo
 6. In "Variables," add your environment variables for the client (not applicable in this case).
 7. In "Settings," specify the Root Directory as `/client`.
 8. Deploy!
-9. Customize the link to your client. In this case, I chose https://ai-notes.up.railway.app.
+9. Customize the link to your client. In this case, I chose https://notesgpt.up.railway.app.
 
 Side note: The only .env in this project is in the server directory. In future projects, if you need an .env for both client and server, you can just have one .env at the root directory.

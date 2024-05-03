@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import './App.css'
 
-const baseURL = 'https://ai-notes-server.up.railway.app' || 'https://localhost:5000'
+const baseURL = 'https://notesgpt-server.up.railway.app' || 'https://localhost:5000'
 
 function App() {
   const [notes, setNotes] = useState([])
