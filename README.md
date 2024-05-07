@@ -1,7 +1,7 @@
 # notesGPT 🤖📝
 
 ## 👋 Introduction
-Welcome to the [**notesGPT**](https://ai-notes.up.railway.app/), a web application that allows users to create, view, and delete notes. It integrates with the OpenAI API to proofread and correct the grammar of entered notes. The app utilizes React for the client-side interface and Node.js with Express for the server-side functionality.
+Welcome to [**notesGPT**](https://ai-notes.up.railway.app/), a web application that allows users to create, view, and delete notes. It integrates with the OpenAI API to proofread and correct the grammar of entered notes. The app utilizes React for the client-side interface, Node.js with Express for the server-side functionality, and MongoDB as the database.
 
 ## ⭐ Features
 - **Create Notes**: Users can enter their notes and add them to the application.
